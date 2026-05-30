@@ -9,7 +9,7 @@ import (
 	"sync/atomic"
 )
 
-// This file contains reference map implementations for unit-tests.
+// This file contains reference map implementations for unit tests.
 
 // mapInterface is the interface Map implements.
 type mapInterface interface {
@@ -82,7 +82,7 @@ func (m *RWMutexMap) Range(f func(key, value any) (shouldContinue bool)) {
 }
 
 // DeepCopyMap is an implementation of mapInterface using a Mutex and
-// atomic.Value.  It makes deep copies of the map on every write to avoid
+// atomic.Value. It makes deep copies of the map on every write to avoid
 // acquiring the Mutex in Load.
 type DeepCopyMap struct {
 	mu    sync.Mutex

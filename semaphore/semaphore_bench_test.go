@@ -12,7 +12,7 @@ import (
 	"golang.org/x/sync/semaphore"
 )
 
-// weighted is an interface matching a subset of *Weighted.  It allows
+// weighted is an interface matching a subset of *Weighted. It allows
 // alternate implementations for testing and benchmarking.
 type weighted interface {
 	Acquire(context.Context, int64) error

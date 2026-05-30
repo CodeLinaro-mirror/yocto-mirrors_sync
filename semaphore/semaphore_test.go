@@ -217,7 +217,7 @@ func TestWeightedAcquireCanceled(t *testing.T) {
 		sem.Release(1)
 		close(ch)
 	}()
-	// Since the context closing happens before enough tokens become available,
+	// Since the context being closed happens before enough tokens become available,
 	// this Acquire must fail.
 	if err := sem.Acquire(ctx, 2); err != context.Canceled {
 		t.Errorf("Acquire with canceled context returned wrong error: want context.Canceled, got %v", err)
